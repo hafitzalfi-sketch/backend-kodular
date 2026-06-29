@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
-header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Headers: Content-Type');
 
 include 'koneksi.php';
 
@@ -21,9 +21,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     } else {
         $input = mysqli_query($conn, "INSERT INTO user (nama, email, username, password) VALUES ('$nama', '$email', '$username', '$password')");
         if($input){
-            echo "Berhasil";
+            echo "berhasil";
         } else {
-            echo "Gagal";
+            echo "gagal";
         }
     }
 } else {
